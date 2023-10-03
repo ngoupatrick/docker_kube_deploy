@@ -10,4 +10,5 @@
 **`docker ps [-a]`**
 ## Delete an instance
 **`docker rm [--force] CONTAINER`**
-## 
+## Delete an image
+**`docker image rm [--force] IMAGE`** 
