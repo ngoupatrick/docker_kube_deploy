@@ -14,4 +14,6 @@
 **`docker image rm [--force] IMAGE`** 
 ## Run shell terminal
 - **on startup**: `docker run -it <image> /bin/[sh,bash]`
-- **on running container**: `docker exec <container> /bin/[bash, sh] [-c '<command>]'`
+- **on running container**: `docker exec <container> /bin/[bash, sh] [-c '<command>']`
+## Stop a container
+**`docker stop <my_container>`** 
