@@ -12,3 +12,6 @@
 **`docker rm [--force] CONTAINER`**
 ## Delete an image
 **`docker image rm [--force] IMAGE`** 
+## Run shell terminal
+- **on startup**: `docker run -it <image> /bin/[sh,bash]`
+- **on running container**: `docker exec <container> /bin/[bash, sh] [-c '<command>]'`
