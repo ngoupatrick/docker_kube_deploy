@@ -1,7 +1,7 @@
 var apiUrl ="";
 
 // Load the JSON configuration
-fetch('config.json')
+fetch('conf/config.json')
     .then(response => response.json())
     .then(config => {
         // Use the API URL from the configuration
