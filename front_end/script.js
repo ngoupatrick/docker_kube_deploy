@@ -9,20 +9,21 @@ function getDataFromAPI() {
          // Use the API URL from the configuration
          const apiUrl = config.apiUrl;
          console.log(apiUrl); // Optional: Log the API URL for verification
+         fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+               displayData(data);
+            })
+            .catch(error => {
+               console.error('Error fetching data:', error);
+            });
 
       })
       .catch(error => {
          console.error('Error loading configuration:', error);
       });
 
-   fetch(apiUrl)
-      .then(response => response.json())
-      .then(data => {
-         displayData(data);
-      })
-      .catch(error => {
-         console.error('Error fetching data:', error);
-      });
+
 }
 
 function displayData(data) {
