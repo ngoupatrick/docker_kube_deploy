@@ -1,5 +1,3 @@
-// script.js
-document.getElementById('getDataButton').addEventListener('click', getDataFromAPI);
 
 // Load the JSON configuration
 fetch('config.json')
@@ -32,3 +30,7 @@ fetch('config.json')
     .catch(error => {
         console.error('Error loading configuration:', error);
     });
+
+// script.js
+document.getElementById('getDataButton').addEventListener('click', getDataFromAPI);
+
