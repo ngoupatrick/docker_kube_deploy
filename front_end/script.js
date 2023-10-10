@@ -12,8 +12,9 @@ async function fetchYaml(url) {
 document.getElementById('getDataButton').addEventListener('click', async () => {
     try {
 		// first test
-		const msgContainer = document.getElementById('msg');
-		msgContainer.innerHTML = `<p>You clicked</p>`;
+		//const msgContainer = document.getElementById('msg');
+		//msgContainer.innerHTML = `<p>You clicked</p>`;
+		alert('You clicked OK!');
         // Fetch API URL from YAML configuration
         /*const config = await fetchYaml('config.yaml');
         const apiUrl = config.api_url;
