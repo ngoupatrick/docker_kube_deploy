@@ -15,7 +15,7 @@ document.getElementById('getDataButton').addEventListener('click', async () => {
 		const msgContainer = document.getElementById('msg');
 		msgContainer.innerHTML = `<p>You clicked</p>`;
         // Fetch API URL from YAML configuration
-        const config = await fetchYaml('config.yaml');
+        /*const config = await fetchYaml('config.yaml');
         const apiUrl = config.api_url;
 
         // Fetch data from API
@@ -23,7 +23,7 @@ document.getElementById('getDataButton').addEventListener('click', async () => {
         const data = await response.json();
 
         // Display data
-        displayData(data);
+        displayData(data);*/
     } catch (error) {
         console.error('Error:', error);
     }
