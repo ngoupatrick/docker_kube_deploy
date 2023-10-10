@@ -3,7 +3,7 @@
 
 function getDataFromAPI() {
    // Load the JSON configuration
-   fetch('conf/config.json')
+   fetch('./conf/config.json')
       .then(response => response.json())
       .then(config => {
          // Use the API URL from the configuration
