@@ -1,13 +1,19 @@
+const apiUrl ="";
 
 // Load the JSON configuration
 fetch('config.json')
     .then(response => response.json())
     .then(config => {
         // Use the API URL from the configuration
-        const apiUrl = config.apiUrl;
+        apiUrl = config.apiUrl;
         console.log(apiUrl); // Optional: Log the API URL for verification
+        
+    })
+    .catch(error => {
+        console.error('Error loading configuration:', error);
+    });
 
-        function getDataFromAPI() {
+function getDataFromAPI() {
             fetch(apiUrl)
                 .then(response => response.json())
                 .then(data => {
@@ -17,8 +23,8 @@ fetch('config.json')
                     console.error('Error fetching data:', error);
                 });
         }
-
-        function displayData(data) {
+		
+function displayData(data) {
             const resultContainer = document.getElementById('apiResult');
             resultContainer.innerHTML = `
                 <p>User ID: ${data.userId}</p>
@@ -26,11 +32,6 @@ fetch('config.json')
                 <p>Completed: ${data.completed ? 'Yes' : 'No'}</p>
             `;
         }
-    })
-    .catch(error => {
-        console.error('Error loading configuration:', error);
-    });
-
 // script.js
 document.getElementById('getDataButton').addEventListener('click', getDataFromAPI);
 
