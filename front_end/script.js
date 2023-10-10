@@ -1,4 +1,4 @@
-const apiUrl ="";
+var apiUrl ="";
 
 // Load the JSON configuration
 fetch('config.json')
