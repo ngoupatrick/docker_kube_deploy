@@ -4,7 +4,7 @@
 function getDataFromAPI() {
    // Load the JSON configuration
    //fetch('./conf/config.json')
-   fetch('/usr/share/nginx/html/conf/config.json')
+   fetch('http://localhost/conf/config.json')
       .then(response => response.json())
       .then(config => {
          // Use the API URL from the configuration
