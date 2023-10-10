@@ -1,6 +1,7 @@
 // npm install js-yaml
 
-import yaml from 'js-yaml';
+//import yaml from 'js-yaml';
+const yaml = require('js-yaml');
 
 // Function to fetch YAML file
 async function fetchYaml(url) {
