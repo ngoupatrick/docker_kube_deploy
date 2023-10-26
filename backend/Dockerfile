@@ -11,6 +11,9 @@ COPY . /app
 RUN mkdir -p /app/config
 # RUN touch /app/config/properties.props
 
+ENV FLASK_APP=app.py
+ENV FLASK_RUN_HOST=0.0.0.0
+
 # Install dependencies
 RUN pip install -r requirements.txt
 

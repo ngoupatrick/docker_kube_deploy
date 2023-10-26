@@ -7,6 +7,7 @@
     # python C:\Users\ngoun\OneDrive\devops\Trash\docker_kube_deploy\backend\app.py
     
 from flask import Flask , request, json, jsonify
+from flask_cors import CORS
 
 app = Flask(__name__)
 
@@ -27,4 +28,6 @@ def carre(): # methode appelé lors de l'appel de la route http://192.168.1.4:30
     return jsonify(val)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    #cors = CORS(app, origins=['http://localhost:3000', 'https://example.com'])
+    CORS(app)
+    app.run(host='0.0.0.0', port=5000, debug=True)

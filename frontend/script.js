@@ -1,8 +1,10 @@
-const addPosts = async (title, body) => {
-   await fetch('http://192.168.1.4:5000/api/carre', {
+document.getElementById('getDataButton').addEventListener('click', addPosts);
+
+function addPosts () {
+   fetch('http://127.0.0.1:5000/api/carre', {
    method: 'POST',
    body: JSON.stringify({
-      value: 4,
+      value: document.getElementById('quantity').value,
    }),
    headers: {
       'Content-type': 'application/json; charset=UTF-8',
@@ -10,9 +12,7 @@ const addPosts = async (title, body) => {
    })
    .then((response) => response.json())
    .then((data) => {
-      setPosts((posts) => [data, ...posts]);
-      setTitle('');
-      setBody('');
+      console.log(data);
    })
    .catch((err) => {
       console.log(err.message);
