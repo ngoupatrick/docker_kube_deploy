@@ -1,3 +1,4 @@
+# docker-compose up --build &
 version: '3'
 services:
   backend:
@@ -5,6 +6,8 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
+    networks:
+      - api_network
     ports:
       - "5000:5000"
   frontend:
@@ -14,3 +17,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - "4000:80"
+    networks:
+      - api_network
+networks:
+  api_network:
+    driver: bridge
