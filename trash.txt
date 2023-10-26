@@ -1,0 +1,23 @@
+git fetch --all;git reset --hard origin/main;
+
+sudo http-server
+
+git add *;git commit -m "adding front";git push;
+
+sudo docker ps
+sudo docker rm my-front --force
+sudo docker rmi my-front --force
+
+sudo docker exec -it my-front /bin/sh
+
+/home/ubuntu_user/test_folder/docker_kube_deploy/front_end
+sudo docker build --no-cache -t my-front .
+
+sudo docker run -p 8090:80 my-front
+sudo docker run -p 8090:80 -h my-front --name my-front -v /home/ubuntu_user/test_folder/config:/usr/share/nginx/html/front_end/conf my-front &
+
+
+=====================================
+sudo docker build --no-cache -t flask-app .
+sudo docker run -p 5000:5000 -h flask-app --name flask-app -v /home/ubuntu_user/test_folder/config:/app/config flask-app &
+

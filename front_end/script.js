@@ -1,70 +1,20 @@
-//var apiUrl ="";
-
-/**
-function getDataFromAPI() {
-   // Load the JSON configuration
-   fetch('conf/config.json')
-   //fetch('http://localhost/conf/config.json')
-      .then(response => response.json())
-      .then(config => {
-         // Use the API URL from the configuration
-         const apiUrl = config.apiUrl;
-         console.log(apiUrl); // Optional: Log the API URL for verification
-         fetch(apiUrl)
-            .then(response => response.json())
-            .then(data => {
-               displayData(data);
-            })
-            .catch(error => {
-               console.error('Error fetching data:', error);
-            });
-
-      })
-      .catch(error => {
-         console.error('Error loading configuration:', error);
-      });
-
-
-}**/
-/**
-function displayData(data) {
-   const resultContainer = document.getElementById('apiResult');
-   resultContainer.innerHTML = `
-                <p>User ID: ${data.userId}</p>
-                <p>Title: ${data.title}</p>
-                <p>Completed: ${data.completed ? 'Yes' : 'No'}</p>
-            `;
-}
-**/
-function getDataFromAPI() {
-   // Load the JSON configuration
-   fetch('config.json')
-   //fetch('http://localhost/conf/config.json')
-      .then(response => response.json())
-      .then(config => {
-         // Use the API URL from the configuration
-         const apiUrl = config.apiUrl;
-         console.log(apiUrl); // Optional: Log the API URL for verification
-         fetch(apiUrl)
-            .then(response => response.json())
-            .then(data => {
-               displayData(data);
-            })
-            .catch(error => {
-               console.error('Error fetching data:', error);
-            });
-
-      })
-      .catch(error => {
-         console.error('Error loading configuration:', error);
-      });
-}
-
-function displayData(data) {
-   const resultContainer = document.getElementById('apiResult');
-   resultContainer.innerHTML = `
-                <p>${data}</p>
-            `;
-}
-// script.js
-document.getElementById('getDataButton').addEventListener('click', getDataFromAPI);
+const addPosts = async (title, body) => {
+   await fetch('http://192.168.1.4:5000/api/carre', {
+   method: 'POST',
+   body: JSON.stringify({
+      value: 4,
+   }),
+   headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+   },
+   })
+   .then((response) => response.json())
+   .then((data) => {
+      setPosts((posts) => [data, ...posts]);
+      setTitle('');
+      setBody('');
+   })
+   .catch((err) => {
+      console.log(err.message);
+   });
+   };
