@@ -15,6 +15,16 @@ app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}})
 logging.getLogger('flask_cors').level = logging.DEBUG
 
+@app.after_request
+def after_request(response):
+    response.headers.add("Access-Control-Allow-Headers","*"
+                         )#"Content-Type,Authorization,x-access-token,X-Custom-Header,true"
+    response.headers.add("Access-Control-Allow-Methods",
+                         "*")#"GET,PUT,PATCH,POST,DELETE,OPTIONS"
+    response.headers.add("Access-Control-Allow-Origin",
+                         "*")
+    return response
+
 @app.route('/')
 def hello_world():
     return 'Hello, Flask in Docker!'
