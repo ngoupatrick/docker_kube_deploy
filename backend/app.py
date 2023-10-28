@@ -8,9 +8,11 @@
     
 from flask import Flask , request, json, jsonify
 from flask_cors import CORS
+import logging
 
 app = Flask(__name__)
 cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
+logging.getLogger('flask_cors').level = logging.DEBUG
 
 @app.route('/')
 def hello_world():
