@@ -15,9 +15,9 @@ app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}})
 # http://127.0.0.1:8080
 # CORS(app, origins="*", allow_headers=[
-    "Content-Type", "Authorization", "Access-Control-Allow-Credentials"],
-    supports_credentials=True)
-logging.getLogger('flask_cors').level = logging.DEBUG
+#    "Content-Type", "Authorization", "Access-Control-Allow-Credentials"],
+#    supports_credentials=True)
+#logging.getLogger('flask_cors').level = logging.DEBUG
 
 @app.after_request
 def after_request(response):
