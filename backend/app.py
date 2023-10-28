@@ -10,6 +10,7 @@ from flask import Flask , request, json, jsonify
 from flask_cors import CORS
 
 app = Flask(__name__)
+cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 @app.route('/')
 def hello_world():
@@ -29,6 +30,6 @@ def carre(): # methode appelé lors de l'appel de la route http://192.168.1.4:30
 
 if __name__ == '__main__':
     #cors = CORS(app, origins=['http://localhost:3000', 'https://example.com'])
-    cors = CORS(app, resources={r"/api/carre": {"origins": "*"}})
+    #cors = CORS(app, resources={r"/api/carre": {"origins": "*"}})
     #CORS(app)
     app.run(host='0.0.0.0', port=5000, debug=True)
