@@ -11,7 +11,8 @@ from flask_cors import CORS
 import logging
 
 app = Flask(__name__)
-cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
+#cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
+CORS(app, resources={r"/*": {"origins": "*"}})
 logging.getLogger('flask_cors').level = logging.DEBUG
 
 @app.route('/')
