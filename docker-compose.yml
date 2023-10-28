@@ -10,7 +10,7 @@ services:
     networks:
       - api_network
     ports:
-      - "5000:5000"
+      - "5432:5432"
   frontend:
     hostname: frontend
     environment:

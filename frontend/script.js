@@ -6,7 +6,7 @@ function addPosts () {
    
 
 
-   fetch('http://127.0.0.1:5000/api/carre', {
+   fetch('http://127.0.0.1:5432/api/carre', {
    method: 'POST',
    body: JSON.stringify({
       value: document.getElementById('quantity').value,
