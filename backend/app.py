@@ -29,5 +29,6 @@ def carre(): # methode appelé lors de l'appel de la route http://192.168.1.4:30
 
 if __name__ == '__main__':
     #cors = CORS(app, origins=['http://localhost:3000', 'https://example.com'])
-    CORS(app)
+    cors = CORS(app, resources={r"/api/carre": {"origins": "*"}})
+    #CORS(app)
     app.run(host='0.0.0.0', port=5000, debug=True)
