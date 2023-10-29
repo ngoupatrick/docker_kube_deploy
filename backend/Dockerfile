@@ -18,7 +18,7 @@ ENV FLASK_RUN_HOST=0.0.0.0
 RUN pip install -r requirements.txt
 
 # Expose the port your Flask app will run on
-EXPOSE 5000
+EXPOSE 5600
 
 # Define the command to start the Flask app
 CMD ["python", "app.py"]

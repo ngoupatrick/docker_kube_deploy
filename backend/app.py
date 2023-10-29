@@ -54,4 +54,4 @@ if __name__ == '__main__':
     #cors = CORS(app, origins=['http://localhost:3000', 'https://example.com'])
     #cors = CORS(app, resources={r"/api/carre": {"origins": "*"}})
     #CORS(app)
-    app.run(host='0.0.0.0', port=5432, debug=True)
+    app.run(host='0.0.0.0', port=5600, debug=True)
