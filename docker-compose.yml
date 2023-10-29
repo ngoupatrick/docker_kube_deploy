@@ -1,5 +1,6 @@
 # docker-compose up --build &
 # git add . && git add * && git commit -m "update docker compose" && git push
+# git fetch --all;git reset --hard origin/main;
 version: '3'
 services:
   backend:
