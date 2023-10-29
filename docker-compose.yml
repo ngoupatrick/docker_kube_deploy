@@ -3,6 +3,7 @@
 version: '3'
 services:
   backend:
+    container_name: backend
     hostname: backend
     build:
       context: ./backend
@@ -12,6 +13,7 @@ services:
     ports:
       - "5432:5432"
   frontend:
+    container_name: frontend
     hostname: frontend
     environment:
       - api_key=key_test
