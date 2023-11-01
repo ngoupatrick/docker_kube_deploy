@@ -4,6 +4,8 @@ sudo http-server
 
 git add * & git add . & git commit -m "adding nginx docker image" & git push
 
+docker-compose up --build -d
+
 sudo docker ps
 sudo docker rm my-front --force
 sudo docker rmi my-front --force
@@ -17,6 +19,14 @@ sudo docker run -p 8090:80 my-front
 sudo docker run -p 8090:80 -h my-front --name my-front -v /home/ubuntu_user/test_folder/config:/usr/share/nginx/html/front_end/conf my-front &
 
 docker ps --format '{{.Names}}'
+
+docker rmi -f $(docker images -aq)
+
+docker stop $(docker ps -a -q)
+docker rm $(docker ps -a -q)
+
+sudo docker stop $(sudo docker ps -a -q)
+sudo docker rm $(sudo docker ps -a -q)
 
 
 =====================================
