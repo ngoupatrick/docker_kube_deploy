@@ -17,6 +17,9 @@ ENV FLASK_RUN_HOST=0.0.0.0
 # Install dependencies
 RUN pip install -r requirements.txt
 
+# Install linux packages
+RUN apt-get update -y && apt-get install -y iputils-ping telnet net-tools lsof curl less netcat tcpdump
+
 # Expose the port your Flask app will run on
 EXPOSE 5600
 

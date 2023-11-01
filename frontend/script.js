@@ -1,12 +1,10 @@
 document.getElementById('getDataButton').addEventListener('click', addPosts);
 
 function addPosts () {
-   //const api_key = process.env.api_key;
-   //const another_key = process.env.another_key;
-   
 
-
-   fetch('http://127.0.0.1:5600/api/carre', {
+   //fetch('http://localhost:5600/api/carre', {
+   //fetch('http://localhost:8080/backend/api/carre', {
+   fetch('/backend/api/carre', {
    method: 'POST',
    body: JSON.stringify({
       value: document.getElementById('quantity').value,

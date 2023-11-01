@@ -11,13 +11,7 @@ from flask_cors import CORS
 import logging
 
 app = Flask(__name__)
-#cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 CORS(app, resources={r"/*": {"origins": "*"}})
-# http://127.0.0.1:8080
-# CORS(app, origins="*", allow_headers=[
-#    "Content-Type", "Authorization", "Access-Control-Allow-Credentials"],
-#    supports_credentials=True)
-#logging.getLogger('flask_cors').level = logging.DEBUG
 
 @app.after_request
 def after_request(response):
@@ -39,7 +33,7 @@ def hello_world():
     return 'Hello, Flask in Docker!'
 
 @app.route("/api/carre", methods = ['POST'])
-def carre(): # methode appelé lors de l'appel de la route http://192.168.1.4:3003/api/carre
+def carre(): 
     # recupere les données envoyés par le client (parametres)
     # données = {"value":nb}
     donnees = json.loads(request.data)
@@ -51,7 +45,4 @@ def carre(): # methode appelé lors de l'appel de la route http://192.168.1.4:30
     return jsonify(val)
 
 if __name__ == '__main__':
-    #cors = CORS(app, origins=['http://localhost:3000', 'https://example.com'])
-    #cors = CORS(app, resources={r"/api/carre": {"origins": "*"}})
-    #CORS(app)
     app.run(host='0.0.0.0', port=5600, debug=True)

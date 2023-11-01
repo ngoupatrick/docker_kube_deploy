@@ -16,8 +16,23 @@ sudo docker build --no-cache -t my-front .
 sudo docker run -p 8090:80 my-front
 sudo docker run -p 8090:80 -h my-front --name my-front -v /home/ubuntu_user/test_folder/config:/usr/share/nginx/html/front_end/conf my-front &
 
+docker ps --format '{{.Names}}'
+
 
 =====================================
 sudo docker build --no-cache -t flask-app .
 sudo docker run -p 5000:5000 -h flask-app --name flask-app -v /home/ubuntu_user/test_folder/config:/app/config flask-app &
+
+=====================================
+
+# app.py
+# activate env:
+    # C:\Users\ngoun\Documents\dev_ops_all\python_soft\mes_envs\env_test_docker\Scripts\activate
+# requirements file:
+    # pip install --no-cache-dir -r C:\Users\ngoun\OneDrive\devops\Trash\docker_kube_deploy\backend\requirements_311.txt
+# run
+    # python C:\Users\ngoun\OneDrive\devops\Trash\docker_kube_deploy\backend\app.py
+    
+
+=======================================
 
