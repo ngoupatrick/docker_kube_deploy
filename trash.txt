@@ -2,7 +2,7 @@ git fetch --all;git reset --hard origin/main;
 
 sudo http-server
 
-git add *;git add.;git commit -m "adding front";git push;
+git add *;git add .;git commit -m "adding front";git push;
 
 sudo docker ps
 sudo docker rm my-front --force
